@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boxanimation</title>
+    <style>
+      /* STYLING */
+
+      div.container {
+        display: flex;
+        flex-direction: column;
+        height: 18rem;
+        width: 35rem;
+        margin: 5rem auto;
+      }
+
+      div.container div.box {
+        height: 12rem;
+        width: 35rem;
+        display: flex;
+        border: 10px solid black;
+        margin-bottom: 0.5rem;
+        transform: rotateX(180deg);
+        background-color: rgb(46, 45, 45);
+      }
+
+      div.box div.item {
+        height: 12rem;
+        width: 7rem;
+        transition: animation 4s linear;
+      }
+
+      #item1 {
+        background-color: #995ff7;
+      }
+      #item2 {
+        background-color: rgb(218, 64, 210);
+      }
+      #item3 {
+        background-color: rgb(245, 21, 125);
+      }
+      #item4 {
+        background-color: rgb(241, 93, 67);
+      }
+      #item5 {
+        background-color: rgb(214, 112, 28);
+      }
+
+    /* BUTTONS STYLING */
+      div.container div.buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2rem;       
+      }
+
+      div.container div.buttons #start,#stop{
+        cursor: pointer;
+        color: white;
+        padding: 0.2rem 0.4rem;
+        width: 5rem;
+        border-radius: 0.2rem;
+      }
+
+      div.container div.buttons #start{
+        background-color: rgb(37, 143, 63);       
+      }
+      div.container div.buttons #stop{
+        background-color: rgb(187, 66, 66);
+      }
+
+      div.container div.buttons #start:hover,#stop:hover{
+      transform: scale(1.1);
+      }
+     
+      @keyframes wave1 {
+        0% {height: 100%;}
+        20% {height: 10%;}
+        40% {height: 50%;}
+        60% {height: 30%;}
+        80% {height: 90%;}
+        100% {height: 100%;}
+      }
+      @keyframes wave2 {
+        0% {height: 100%;}
+        20% {height: 20%;}
+        40% {height: 40%;}
+        60% {height: 55%;}
+        80% {height: 40%;}
+        100% {height: 100%;}
+      }
+      @keyframes wave3 {
+        0% {height: 100%;}
+        20% {height: 40%;}
+        40% {height: 70%;}
+        60% {height: 10%;}
+        80% {height: 65%;}
+        100% {height: 100%;}
+      }
+      @keyframes wave4 {
+        0% {height: 100%;}
+        20% {height: 30%;}
+        40% {height: 60%;}
+        60% {height: 80%;}
+        80% {height: 65%;}
+        100% {height: 100%;}
+      }
+      @keyframes wave5 {
+        0% {height: 100%;}
+        20% {height: 10%;}
+        40% {height: 40%;}
+        60% {height: 5%;}
+        80% {height: 50%;}
+        100% {height: 100%;}
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="item" id="item1"></div>
+        <div class="item" id="item2"></div>
+        <div class="item" id="item3"></div>
+        <div class="item" id="item4"></div>
+        <div class="item" id="item5"></div>
+      </div>
+      <div class="buttons">
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+      </div>
+    </div>
+
+<!-- JAVASCRIPT -->
+    <script>
+      const start = () => {
+        document.getElementById("item1").style.animation ="wave1 4.5s linear infinite ";
+        document.getElementById("item2").style.animation ="wave2 4s linear infinite ";
+        document.getElementById("item3").style.animation ="wave3 4.7s linear infinite ";
+        document.getElementById("item4").style.animation ="wave4 4.3s linear infinite ";
+        document.getElementById("item5").style.animation ="wave5 4.9s linear infinite ";
+      };
+      const stop = () => {
+        document.getElementById("item1").style.animationPlayState = "paused";
+        document.getElementById("item2").style.animationPlayState = "paused";
+        document.getElementById("item3").style.animationPlayState = "paused";
+        document.getElementById("item4").style.animationPlayState = "paused";
+        document.getElementById("item5").style.animationPlayState = "paused";
+      };
+    </script>
+  </body>
+</html>
